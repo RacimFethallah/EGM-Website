@@ -1,9 +1,15 @@
 ---
+import Header from '../components/header';
+
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
+// import { CallFilled } from '@fluentui/react-icons';
+import { Image } from 'astro:assets';
+import url from '../assets/logo.png';
+
 ---
 
 <!doctype html>
@@ -17,7 +23,9 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<header class="bg-blue-500 w-full h-[100px]"></header>
+		<Header client:visible/>
+		<!-- <Image src={url} alt="A description of my image." /> -->
+		
 		<slot />
 	</body>
 </html>
