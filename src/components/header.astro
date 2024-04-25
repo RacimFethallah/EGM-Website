@@ -1,13 +1,15 @@
 ---
-import { CiLocationOn, CiMail, CiPhone } from 'react-icons/ci';
+import { CiLocationOn, CiMail, CiPhone, CiSearch } from 'react-icons/ci';
 import { Image } from 'astro:assets';
 import logo from '../assets/logo.png';
+import { IoSearch } from 'react-icons/io5';
+import SidepanelButton from './sidepanelButton';
 
 ---
 
 
 <header class="w-full flex flex-col">
-    <div class="bg-[#0d2d62] text-white py-4 flex flex-row justify-around">
+    <div class="bg-[#0d2d62] text-white py-4 md:flex flex-row justify-around hidden">
         <a class='flex items-center gap-2 hover:text-[#556c91] transition-all hover:cursor-pointer'
             href="tel:+213799039212"><CiPhone size={24} />+213 799-03-92-12</a>
 
@@ -19,16 +21,33 @@ import logo from '../assets/logo.png';
         <a class='flex items-center gap-2 hover:text-[#556c91] transition-all hover:cursor-pointer'
             href="mailto:egmclubua3@gmail.com"><CiMail size={24} />egmclubua3@gmail.com</a>
     </div>
-    <div class="px-10 shadow-md">
-        <div class='flex flex-row items-center py-5 gap-5'>
-            <!-- <img src={'https://scontent.falg6-2.fna.fbcdn.net/v/t39.30808-6/336917775_233532819040679_6425193963479368112_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=rEBCcSCLfC0Q7kNvgFVu11B&_nc_ht=scontent.falg6-2.fna&oh=00_AfBdqvVRvlYkHnPfUmIhrm_JKNLW05zuD7ptFrK86452Sw&oe=6630234B'} width={120} alt="logo" /> -->
+    <div class="px-10 shadow-md flex flex-col justify-between items-center lg:flex-row">
+        <div class='md:flex flex-row items-center py-5 gap-5 hidden'>
             <Image src={logo} width={100} alt="La description de mon image." />
             <div class='flex flex-col'>
-                <div class='font-bold text-lg'>Entrepreneur Growth Mindset</div>
-                <div class=' text-slate-500 text-sm'>Université d&apos;alger 3</div>
+                <div class='font-bold text-lg font-sans'>Entrepreneur Growth Mindset</div>
+                <div class=' text-slate-500 text-sm italic'>Université d&apos;alger 3</div>
             </div>
 
         </div>
+        <div class="flex items-center md:py-0 py-5">
+            
+            <nav class="">
+                <ul class="flex gap-28 text-lg px-20 font-semibold  transition-all">
+                    <li class="hover:cursor-pointer hover:underline hover:text-red-800 transition-all">Home</li>
+                    <li class="hover:cursor-pointer hover:underline hover:text-red-800 transition-all">Home</li>
+                    <li class="hover:cursor-pointer hover:underline hover:text-red-800 transition-all">Home</li>
+                    <li class="hover:cursor-pointer hover:underline hover:text-red-800 transition-all">Home</li>
+                </ul>
+            </nav>
+            <div class="mr-5 hover:cursor-pointer">
+            <IoSearch size={24}/>
+
+
+            </div>
+
+        </div>
+        
 
 
     </div>
